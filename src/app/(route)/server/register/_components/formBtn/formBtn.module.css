@@ -1,0 +1,16 @@
+.btnStyles{
+width: 149px;
+height: 50px;
+
+background: #4F7BED;
+border-radius: 10px;
+border: none;
+font-family: 'AppleSDGothicNeoSB00';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 28px;
+color: #FFFFFF;
+
+
+}

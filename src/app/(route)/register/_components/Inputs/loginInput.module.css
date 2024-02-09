@@ -1,0 +1,63 @@
+.inputContainer{
+    width: 322px;
+    margin-bottom: 20px;
+
+}
+.loginInput{
+    width: 305px;
+    height: 55px;
+    border: 1px solid #D8D8D8;
+    border-radius: 10px;
+    padding-left: 15px;
+}
+
+.inputImgs{
+    display: flex;
+  align-items: center;
+    height: 65px;
+}
+.inputImg{
+position: absolute;
+right: 50px;
+margin-top: 10px;
+cursor: pointer;
+fill: #4F7BED;
+}
+.ImgMarginUp{
+    margin-top: 5px;
+}
+.ImgMarginBot{
+    margin-bottom: 10px;
+}
+.loginInput:focus{
+    border: 2px solid #4F7BED;
+}
+.loginchk{
+    width: 320px;
+    height: 30px;
+}
+
+.loginMargin{
+    margin-top: 10px;
+}
+
+.autoLoginMargin{
+    margin-top: 10px;
+    font-family: 'Outfit';
+}
+
+.dateInput::-webkit-calendar-picker-indicator {
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    background-position: calc(100% - 20px) center;
+    cursor: pointer;
+    font-size: 35px;
+}
+
+.dateInput {
+background-image: url('../../../../../../public/assets/img/uil_calender.svg');
+background-repeat: no-repeat;
+background-position: calc(100% - 10px) center;
+
+}
