@@ -120,29 +120,31 @@ export default function Home() {
             <div className={styles.serverRemContainer}>
               <label className={styles.titleFont}>키페어 선택</label>
               <div className={styles.keypairsContainer}>
-                <div className={styles.keypairContainer}>
+                <div className={styles.keypairContainer}
+                onClick={()=>{
+                  setKeypair('ppk');
+                }}>
                   <button 
                   className={`${keypair === 'ppk' ? styles.keypairRadioOn : styles.keypairRadioOff}`}
-                  onClick={()=>{
-                    setKeypair('ppk');
-                  }}
                   >
                   </button>
                   <label className={styles.keypairs}>ppk</label>
                 </div>
-                <div className={styles.keypairContainer}>
+                <div className={styles.keypairContainer}
+                onClick={()=>{
+                  setKeypair('pem');
+                }}>
                   <button 
                   className={`${keypair === 'pem' ? styles.keypairRadioOn : styles.keypairRadioOff}`}
-                  onClick={()=>{
-                    setKeypair('pem');
-                  }}
                   >
                   </button>
                   <label className={styles.keypairs}>pem</label>
                 </div>
               </div>
             </div>
+            <div className={styles.submitBtn}>
             <FormBtn onSubmit={submit}/>
+            </div>
           </div>
         </div>
       </div>

@@ -66,3 +66,14 @@ color: #0075FF;
 
 
 }
+
+
+@media only screen and (max-height: 815px) {
+    .loginContainer{
+        width: 400px;
+        height: 500px;
+        margin: 0 auto;
+        position: relative;
+        top: 50px;
+    }
+}

@@ -35,3 +35,6 @@ input::placeholder, textarea::placeholder{
 }
 
 
+button{
+    cursor: pointer;
+}

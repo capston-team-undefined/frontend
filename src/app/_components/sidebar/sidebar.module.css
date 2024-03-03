@@ -6,12 +6,12 @@
 }
 
 .logo{
-    margin: 35px;
-font-family: 'Outfit';
-font-style: normal;
-font-weight: 700;
-font-size: 40px;
-line-height: 50px;
+    margin: 9%;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 50px;
 }
 
 .loginTitleColor1{
@@ -66,7 +66,7 @@ line-height: 50px;
 
 .bottomSidebar{
     width: 100%;
-    height: 400px;
+    height: 38%;
     border-top: 1px solid #E0E3E5;
     display: flex;
     justify-content: center;
@@ -93,3 +93,10 @@ line-height: 50px;
 
 
 }
+
+@media only screen and (max-height: 880px) {
+    .loginBtn{
+        position: relative;
+        bottom: 20px;
+    }
+ }

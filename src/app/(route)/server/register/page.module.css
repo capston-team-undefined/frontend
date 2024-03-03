@@ -175,6 +175,7 @@ color: #4F7BED;
     background: #0075FF;
     border-radius: 100%;
     border: none;
+    cursor: pointer;
 
 }
 
@@ -184,6 +185,7 @@ color: #4F7BED;
     background: #D8D8D8;
     border-radius: 100%;
     border: none;
+    cursor: pointer;
 }
 
 .keypairs{
@@ -194,14 +196,64 @@ color: #4F7BED;
     font-size: 16px;
     line-height: 20px;
     color: #000000;
+    cursor: pointer;
 }
 .keypairContainer{
     display: flex;
     align-items: center;
     width: 80px;
+    cursor: pointer;
 }
 
 .keypairsContainer{
     width: 80%;
     display: flex;
+}
+
+@media only screen and (max-height: 880px) {
+    .submitBtn{
+        position: relative;
+        bottom: 40px;
+    }
+}
+@media only screen and (max-height: 780px) {
+    .serverNameContainer{
+        margin-bottom: 30px;
+    }
+    .serverDepContainer{
+        margin-bottom: 30px;
+    }
+    .serverRemContainer{
+        margin-bottom: 40px;
+    }
+    .submitBtn{
+        position: relative;
+        bottom: 0px;
+    }
+
+}
+
+@media only screen and (max-width: 1600px) {
+   .serverNameContainer{
+    width: 60%;
+   }
+   .serverRemContainer{
+    width: 60%;
+   }
+   .serverDepContainer{
+    width: 60%;
+   }
+}
+
+
+@media only screen and (max-width: 1350px) {
+    .serverNameContainer{
+        width: 80%;
+    }
+    .serverRemContainer{
+     width: 80%;
+    }
+    .serverDepContainer{
+        width: 80%;
+    }
 }
