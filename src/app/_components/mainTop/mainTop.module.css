@@ -1,0 +1,36 @@
+.main{
+    width: 100%;
+    height: calc(100vh - 60px);
+    margin-top: 60px;
+    background-image: url("../../../../public/assets/img/mainImg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.mainMargin{
+    height: 60px;
+}
+.mainItem{
+    position: absolute;
+    left: 15%;
+    bottom: 20%;
+}
+
+.mainTitle{
+    font-family: 'GmarketSans';
+    color: #F3D0D7;
+    font-size: 20px;
+}
+
+.problemBtn{
+    margin-top: 50px;
+}
+
+.btnItem{
+    width: 200px;
+    background-color: #00FF0A;
+    border: none;
+    padding: 20px;
+    font-family: 'GmarketSans';
+    font-size: 20px;
+}
