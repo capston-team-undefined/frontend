@@ -9,7 +9,9 @@
     margin: 0px;
     padding: 0px;
 }
-
+::-webkit-scrollbar{
+    display: none;
+}
 ul, ol {
     list-style: none;
 }
@@ -20,9 +22,6 @@ a {
 
 button, textarea, input{
     outline: none;
-}
-main{
-    background-color: #000000;
 }
 
 input::placeholder, textarea::placeholder{

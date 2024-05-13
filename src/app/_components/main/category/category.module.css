@@ -1,0 +1,47 @@
+.main{
+    width: 100vw;
+    height: 500px;
+    background-color: #EDEDED;
+}
+
+.titleContianer{
+    text-align: center;
+    padding-top: 40px;
+}
+.title{
+    font-family: 'Gmarket Sans TTF';
+    font-size: 45px;
+    font-weight: bolder;
+    line-height: 57px;
+    color: #000000;
+}
+
+.categoryListContainer{
+    width: 80%;
+    height: 50%;
+    margin: 5% auto;
+    display: flex;
+    justify-content: space-around;
+}
+.itemContainer{
+    width: 200px;
+    height: 250px;
+}
+.itemImg{
+    width: 200px;
+    height: 200px;
+    background-color: #6BA5FF;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.itemTitle{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 46px;
+    text-align: center;
+    color: #000000;
+}

@@ -24,7 +24,7 @@ export default function Navbar(){
                 </Link>
                 <Link href={'#'} className={styles.navbarItem}>
                     마이페이지
-                </Link>
+                </Link> 
             </div>
 
             <div className={styles.navbarContainer2}>
