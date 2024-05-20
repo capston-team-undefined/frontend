@@ -1,0 +1,25 @@
+.find_bar_container {
+  width: 30vw;
+  height: 5vh;
+  display: flex;
+  margin: 1vh auto;
+  font-weight: bold;
+  line-height: 5vh;
+}
+
+.toLogin {
+  width: 9vw;
+  height: 5vh;
+}
+
+.find_id {
+  width: 9vw;
+  height: 5vh;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.find_password {
+  height: 5vh;
+  width: 9vw;
+}
