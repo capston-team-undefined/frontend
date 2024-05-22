@@ -8,6 +8,7 @@
 * {
     margin: 0px;
     padding: 0px;
+    font-family: 'GmarketSans';
 }
 ::-webkit-scrollbar{
     display: none;
@@ -31,4 +32,9 @@ input::placeholder, textarea::placeholder{
 
 button{
     cursor: pointer;
+}
+
+
+.slick-prev, .slick-next {
+    display: none !important;
 }

@@ -1,12 +1,10 @@
 .main{
     display: flex;
     top: 0;
-    position: fixed;
     width: 100%;
     height: 60px;
     justify-content: space-between;
     align-items: center;    
-    background-color: rgba(0, 0, 0, 0.3);
     z-index: 10;
 }
 
@@ -25,18 +23,44 @@
     align-items: center;
     cursor: pointer;
     font-family: 'GmarketSans';
-    color: #FFFFFF
+    color: #FFFFFF;
+    font-weight: bolder;
 }
-.navbarItem:hover{
-    color: #0064FF;
+
+.loginBtnRoot{
+    width: 100px;
+    height: 40px;
+    box-sizing: border-box;
+    background: none;
+    border: 1px solid #FFFFFF;
+    border-radius: 12px;
+    color: #FFFFFF;
 }
 
 .loginBtn{
-width: 100px;
-height: 40px;
-box-sizing: border-box;
-background: none;
-border: 1px solid #FFFFFF;
-border-radius: 12px;
-color: #FFFFFF;
+    width: 100px;
+    height: 40px;
+    box-sizing: border-box;
+    background: none;
+    border: 1px solid #000000;
+    border-radius: 12px;
+    color: #000000;
+}
+.navItemColor{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'GmarketSans';
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: bolder;
+}
+
+
+.navItemChoice{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'GmarketSans';
+    color: rgba(0, 0, 0);
+    font-weight: bolder;
 }

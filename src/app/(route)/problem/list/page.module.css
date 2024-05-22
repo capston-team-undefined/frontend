@@ -1,0 +1,20 @@
+.main{
+    width: 90%;
+    height: 300px;
+    margin: 0 5%;
+    margin-top: 200px;
+
+}
+
+.recommendContainer{
+    width: 45%;
+    padding-top: 10px;
+}
+.likeContainer{
+    width: 45%;
+    padding-top: 10px;
+}
+.topContainer{
+    display: flex;
+    justify-content: space-around;
+}
