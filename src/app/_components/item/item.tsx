@@ -25,13 +25,11 @@ export default function Item() {
     style={
       isWidthGreater ?
       {
-        width: `${divRef.current?.offsetWidth ? divRef.current?.offsetWidth - 50 : 0}px`
+        width: `${divRef.current?.offsetWidth ? divRef.current?.offsetWidth - 50 : 0}px`,
       }
       :
       {}
-    }
-    
-    >
+    }>
       <div className={styles.img} />
       <div className={styles.problemContainer}>
         <div className={styles.profileImg} />
