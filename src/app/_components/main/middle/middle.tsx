@@ -1,6 +1,5 @@
 import styles from './middle.module.css'
 
-
 export default function Middle(){
     return(
         <div className={styles.main}>

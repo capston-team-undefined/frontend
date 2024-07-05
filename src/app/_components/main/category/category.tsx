@@ -65,13 +65,13 @@ export default function Category(){
                     <div className={styles.itemImg}>
                         <Image
                         alt=''
-                        src="/assets/img/link.svg"
+                        src="/assets/img/yesorno.svg"
                         width={150}
                         height={150}
                         />
                     </div>
                     <div className={styles.itemTitle}>
-                    연결형
+                    O/X형
                     </div>
                 </div>
             </div>

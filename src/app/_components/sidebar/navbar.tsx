@@ -44,7 +44,7 @@ export default function Navbar(){
                     }`}>
                     문제집 목록
                 </Link>
-                <Link href={'#'} className={`${ pathname === '/' ? styles.navbarItem : styles.navItemColor}`}>
+                <Link href={'/problem/create'} className={`${ pathname === '/' ? styles.navbarItem : styles.navItemColor}`}>
                     문제 제작
                 </Link>
                 <Link href={'#'} className={`${ pathname === '/' ? styles.navbarItem : styles.navItemColor}`}>

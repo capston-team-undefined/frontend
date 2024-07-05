@@ -1,21 +1,36 @@
-
-.loginInput{
-    width: 305px;
-    height: 55px;
-    border: 1px solid #D8D8D8;
-    border-radius: 10px;
-    padding-left: 15px;
-}
-.loginchk{
-    width: 320px;
-    height: 30px;
+ .loginInput {
+  width: 500px;
+  height: 50px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  padding-left: 15px;
 }
 
-.loginMargin{
-    margin-top: 15px;
+.loginMargin {
+  margin-top: 15px;
 }
 
-.autoLoginMargin{
-    margin-top: 10px;
-    font-family: 'Outfit';
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 420px;
+}
+
+.loginInput {
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 40px; 
+}
+
+.iconWrapper {
+  position: absolute;
+  left: 10px; /* 아이콘을 input의 오른쪽에 위치 */
+  display: flex;
+  align-items: center;
+  pointer-events: none; 
+}
+
+.icon {
+  pointer-events: none;  
 }

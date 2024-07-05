@@ -1,13 +1,13 @@
 .loginBtn{
-    width: 320px;
-    height: 50px;
-    background: #4F7BED;
+    width: 250px;
+    height: 53px;
+    background: #0064FF;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 20px;
     color: #FFFFFF;
     margin-top: 20px;
