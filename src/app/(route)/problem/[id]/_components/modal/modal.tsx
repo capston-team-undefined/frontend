@@ -19,8 +19,7 @@ export default function Modal(props:{
         name: '',
         description: '',
         primaryTag: '',
-        tag: [],
-        image: null
+        tag: []
     });
 
     const handleOnClickChangeTag = (tag:string) =>{
@@ -77,8 +76,7 @@ export default function Modal(props:{
             name: '',
             description: '',
             primaryTag: '',
-            tag: [],
-            image: null
+            tag: []
         })
         props.setModal(false);
     }
@@ -93,8 +91,7 @@ export default function Modal(props:{
                 name: setting.name,
                 description: setting.description,
                 primaryTag: setting.primaryTag,
-                tag: setting.tag,
-                image: setting.image
+                tag: setting.tag
             }
         });
 
@@ -102,8 +99,7 @@ export default function Modal(props:{
             name: '',
             description: '',
             primaryTag: '',
-            tag: [],
-            image: null
+            tag: []
         })
         props.setModal(false);
     }
@@ -114,34 +110,6 @@ export default function Modal(props:{
             setSetting(props.problemData?.setting);
         }
     },[props.modal])
-
-    const [dragOver, setDragOver] = useState(false);
-
-    const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
-        e.preventDefault();
-        setDragOver(true);
-    }
-
-    const handleDragLeave = (e: React.DragEvent<HTMLDivElement>) => {
-        e.preventDefault();
-        setDragOver(false);
-    }
-
-    const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
-        e.preventDefault();
-        setDragOver(false);
-
-        // 드래그된 파일 정보 가져오기
-        const file = e.dataTransfer.files[0];
-
-        // 파일 유효성 검사 및 처리
-        if (file && file.type.startsWith('image/')) {
-            const set = setting;
-            set.image = file;
-            setSetting(set);
-        }
-    }
-
     return(
         <div className={styles.main}
         style={
@@ -160,41 +128,6 @@ export default function Modal(props:{
                 </div>
                 <div className={styles.inputContainer}>
 
-                    <div className={styles.probleTag}>
-                        <div className={styles.icon}>
-                            <Image
-                            src="/assets/img/iconbook.svg"
-                            alt="logo"
-                            width={30}
-                            height={30}
-                            />
-                        </div>
-                        <div className={styles.name}>
-                            표지 추가
-                        </div>
-                        <div
-                        onDragOver={handleDragOver}
-                        onDragLeave={handleDragLeave}
-                        onDrop={handleDrop}
-                        className={styles.inputImg}
-                        >
-                            드레그 엔 드랍 
-                        </div>
-                        <div
-                        className={styles.imageStylesContainer}
-                        >
-                        {setting.image ?
-                           <img
-                           src={URL.createObjectURL(setting.image)}
-                           alt="Uploaded Image"
-                            className={styles.imageStyles}
-                           /> 
-                           :
-                           "이미지가 여기에 표시됩니다"
-                        }
-                        </div>
-                    </div>
-                    
                     <div className={styles.problemName}>
                         <div className={styles.icon}>
                             <Image

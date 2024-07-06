@@ -1,8 +1,3 @@
-interface ProblemList{
-    pageListNum: number,
-    pageItemNum: number
-}
-
 export type probelm = 'choice' | 'choiceList' | 'short text' | 'text' | 'linking' | 'yesorno' | '';
 
 export interface  ProblemChoice{
@@ -37,7 +32,8 @@ export interface ProblemSetting{
     name: string,
     description: string,
     primaryTag: string,
-    tag: string[]
+    tag: string[],
+    image: File | null
 }
 export default interface problemData{
     setting: ProblemSetting,

@@ -1,0 +1,66 @@
+.main{
+    width: 100%;
+    height: 75%;
+}
+.inforContainer{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.infor{
+    width: 9%;
+    aspect-ratio: 2.4/1;
+    background: #555555;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    margin-right: 20px;
+}
+
+
+.problemInputContainer{
+    width: 100%;
+    display: flex;
+}
+.inputStyleContainer{
+    width: 30%;
+    aspect-ratio: 5/1;
+    display: flex;
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+.inputStyle{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding-right: 10%;
+    background: rgba(206, 223, 255, 0.8);
+    border: 0.7px solid #000000;
+    border-radius: 10px;
+}
+.inputStyleL{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding-left: 10%;
+    background: rgba(206, 223, 255, 0.8);
+    border: 0.7px solid #000000;
+    border-radius: 10px;
+}
+.inputBtn{
+    border: none;
+    background: none;
+
+}
+
+.inputPositionL{
+    position: relative;
+    right: 10%;
+}
+
+.inputPositionR{
+    position: relative;
+    left: 10%;
+}

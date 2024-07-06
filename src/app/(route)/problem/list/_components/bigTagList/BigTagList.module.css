@@ -1,0 +1,15 @@
+.main{
+    width: 100%;
+    margin: 5% 0;
+    padding: 20px 0;
+    border-bottom: 1px solid #555555;
+    border-top: 1px solid #555555;
+}
+.bigTagListContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+}
+.itemContainer{
+    width: 15%;
+}
