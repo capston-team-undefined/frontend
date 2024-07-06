@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import styles from './modal.module.css'
-import { useEffect, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import { ProblemSetting } from '@/utils/types/problem'
 
 
@@ -15,7 +15,6 @@ export default function Modal(){
         primaryTag: '',
         tag: []
     });
-    const [tag, setTag] = useState<string[]>([]);
 
     const handleOnClickChangeTag = (tag:string) =>{
         const set = setting;
@@ -32,6 +31,23 @@ export default function Modal(){
 
         setSetting(sets);
     }
+
+    const handleOnChangeName = (e:ChangeEvent<HTMLInputElement>) => {
+        const set = setting;
+
+        set.name = e.target.value;
+
+        setSetting(set);
+    }
+
+    const handleOnChangeDescription = (e:ChangeEvent<HTMLInputElement>) => {
+        const set = setting;
+
+        set.description = e.target.value;
+
+        setSetting(set);
+    }
+
     useEffect(()=>{
         const root = primaryTag.map((it)=>{
             return(
@@ -44,6 +60,7 @@ export default function Modal(){
         })
         setPrimaryTagHTML(root)
     })
+    
     return(
         <div className={styles.main}>
             <div className={styles.background}/>
@@ -71,6 +88,8 @@ export default function Modal(){
                         type="text" 
                         placeholder='문제집 이름을 입력해주세요.'
                         className={styles.input}
+                        value={setting.name}
+                        onChange={handleOnChangeName}
                         />
                     </div>
 
@@ -90,6 +109,8 @@ export default function Modal(){
                         type="text" 
                         placeholder='문제집 설명을 입력해주세요.'
                         className={styles.input}
+                        value={setting.description}
+                        onChange={handleOnChangeDescription}
                         />
                     </div>
 
@@ -152,6 +173,14 @@ export default function Modal(){
                             }
                         </div>
                        </div>
+                    </div>
+                    <div className={styles.submitBtnContainer}>
+                        <div className={styles.cancelBtn}>
+                            취소
+                        </div>
+                        <div className={styles.submitBtn}>
+                            문제집 만들기
+                        </div>
                     </div>
                 </div>
             </div>

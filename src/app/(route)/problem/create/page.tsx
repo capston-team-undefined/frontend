@@ -12,6 +12,7 @@ import Modal from "./_components/modal/modal";
 export default function Home() {
   const [problemData, setProblemData] = useState<problemData>();
   const [problemPages, setProblemPages] = useState<JSX.Element[]>([]);
+  const [modal,setModal] = useState(true);
   const [reload,setReload] = useState(false);
   const handleDeleteProblem = (index: number) => {
     setReload(true);
@@ -34,6 +35,7 @@ export default function Home() {
     updatedProblemData.splice(index, 1);
 
     setProblemData({
+      setting: problemData.setting,
       probelmType: updatedProblemType,
       problemText: updatedProblemText,
       point: updatedProblemPonit,
@@ -59,16 +61,16 @@ export default function Home() {
   };
 
   useEffect(() => {
-
     if(reload){
       updateProblemPages();
       setReload(false);
     }
     
   }, [reload]);
+  
   return (
   <main>
-      <Modal/>
+    <Modal/>
     <Navbar problemType={problemData?.probelmType ? problemData.probelmType : []}/>
     <Sidebar problemType={problemData!} setProblemType={setProblemData} setReload={setReload}/>
     <div className={styles.problemContainer}>

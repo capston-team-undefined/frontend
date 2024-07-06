@@ -40,6 +40,7 @@ export interface ProblemSetting{
     tag: string[]
 }
 export default interface problemData{
+    setting: ProblemSetting,
     probelmType?: probelm[] | null,
     problemText?: string[],
     point?: number[],

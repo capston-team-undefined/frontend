@@ -10,7 +10,7 @@
 .modalMain{
     box-sizing: border-box;
     width: 33vw;
-    height: 80vh;
+    aspect-ratio: 1/1;
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 30px;
     position: fixed;
@@ -162,4 +162,35 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+.submitBtnContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cancelBtn{
+    width: 33%;
+    aspect-ratio: 200/70;
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submitBtn{
+    width: 33%;
+    aspect-ratio: 200/70;
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    color: #FFFFFF;
 }
