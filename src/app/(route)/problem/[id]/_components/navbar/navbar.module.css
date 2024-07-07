@@ -25,6 +25,7 @@
     display: flex;
     justify-content: end;
     align-items: center;
+    margin-right: 10px;
 }
 .btn{
     box-sizing: border-box;

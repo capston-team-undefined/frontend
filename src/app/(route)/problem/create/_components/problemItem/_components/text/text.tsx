@@ -7,7 +7,7 @@ import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 
 export default function Text(props:{
     problemData: problemData,
-    setProblemData: Dispatch<SetStateAction<problemData | undefined>>,
+    setProblemData: Dispatch<SetStateAction<problemData>>,
     num:Number
 }){
     const [problem, setProblem] = useState<ProblemText>({

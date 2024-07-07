@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 export default function YesOrNo(props:{
     problemData: problemData,
-    setProblemData: Dispatch<SetStateAction<problemData | undefined>>,
+    setProblemData: Dispatch<SetStateAction<problemData>>,
     num:Number
 }) {
     const [problem, setProblem] = useState<ProblemYseOrNo>(

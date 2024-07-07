@@ -6,17 +6,23 @@ import Image from "next/image";
 import { usePathname, useRouter } from 'next/navigation'
 import problemData, { probelm } from "@/utils/types/problem";
 import { changeProblemTypes } from "@/utils/form";
+import { ProblemDatas } from "@/utils/types/problemChk";
 
 
-export default function Navbar(props:{problemType:probelm[], setModal:Dispatch<SetStateAction<boolean>>, problemData:problemData | undefined}){
+export default function Navbar(props:{
+     problemData:ProblemDatas[] }){
      const router = useRouter();
     const [userName,setUserName] = useState('김찬민');
 
-    const handleOnSubmit = () =>{
-     if(props.problemData)
-     console.log(changeProblemTypes(props.problemData));
 
-
+    function sumPoints() {
+        let totalPoints = 0;
+        for (const section of props.problemData) {
+            for (const item of section) {
+                totalPoints += item.point || 0;
+            }
+        }
+        return totalPoints;
     }
     return(
         <div className={styles.main}>
@@ -34,25 +40,12 @@ export default function Navbar(props:{problemType:probelm[], setModal:Dispatch<S
                 >
                     제작자:{userName}
                </label>
-                <Image 
-                src="/assets/img/setting.svg"
-                alt="logo"
-                width={40}
-                height={40}
-                onClick={()=>{props.setModal(true)}}
-                className={styles.back}
-                />
            </div>
            <div className={styles.pageContainer}>
-                총{Math.ceil(props.problemType.length / 3)}페이지 / {props.problemType.length}문항 
+                총{Math.ceil(props.problemData.length)}페이지 / {(props.problemData.length - 1) * 3 + props.problemData[props.problemData.length - 1].length}문항 
            </div>
            <div className={styles.btnContainer}>
-                <div className={styles.btnPosition}>
-                <button 
-                className={styles.btn}
-                onClick={handleOnSubmit}
-                >저장</button>
-                </div>
+                    배점 {sumPoints()}점 | 제한시간: 0시간 30분 41초
            </div>
         </div>
     )

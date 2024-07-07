@@ -1,6 +1,7 @@
 .main{
     width: 100%;
     height: 75%;
+    margin-top: 20px;
 }
 .inforContainer{
     width: 100%;
@@ -34,6 +35,7 @@
 }
 
 .textBox{
+    width: calc(100% - 25px);
     border: none;
     font-size: 20px;
     margin-left: 20px;

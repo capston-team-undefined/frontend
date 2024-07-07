@@ -9,7 +9,7 @@ export default function Modal(props:{
     modal:boolean, 
     setModal:Dispatch<SetStateAction<boolean>>, 
     problemData:problemData | undefined, 
-    setProblemData:Dispatch<SetStateAction<problemData | undefined>> 
+    setProblemData:Dispatch<SetStateAction<problemData>> 
 }){
     const [primaryTag, setPrimaryTag] = useState(['자격증/취업', '초등', '중고등', '언어/외국어', '기타'])
     const [reload, setReload] = useState(true);
@@ -24,10 +24,11 @@ export default function Modal(props:{
     });
 
     const handleOnClickChangeTag = (tag:string) =>{
-        const set = setting;
-
-        set!.primaryTag = tag;
-        setSetting(set);
+        setSetting((prevSetting) => ({
+            ...prevSetting,
+            primaryTag: tag,
+        }));
+        
         setReload(true);
     }
 
@@ -41,19 +42,17 @@ export default function Modal(props:{
     }
 
     const handleOnChangeName = (e:ChangeEvent<HTMLInputElement>) => {
-        const set = setting;
-
-        set.name = e.target.value;
-
-        setSetting(set);
+        setSetting((prevSetting) => ({
+            ...prevSetting,
+            name: e.target.value,
+        }));
     }
 
     const handleOnChangeDescription = (e:ChangeEvent<HTMLInputElement>) => {
-        const set = setting;
-
-        set.description = e.target.value;
-
-        setSetting(set);
+        setSetting((prevSetting) => ({
+            ...prevSetting,
+            description: e.target.value,
+        }));
     }
 
     useEffect(()=>{
@@ -84,9 +83,11 @@ export default function Modal(props:{
     }
 
     const handleOnClickSubmit = () => {
+        if(props.problemData)
         props.setProblemData({
             data: props.problemData?.data,
             point: props.problemData?.point,
+            time: props.problemData.time,
             probelmType: props.problemData?.probelmType,
             problemText: props.problemData?.problemText,
             setting: {

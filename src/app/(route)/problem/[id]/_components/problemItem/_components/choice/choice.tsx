@@ -3,48 +3,40 @@ import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import styles from './choice.module.css'
 import problemData, { ProblemChoice } from '@/utils/types/problem'
 import Image from 'next/image'
+import { ProblemDatas, ProblemTypes } from '@/utils/types/problemChk'
 
 export default function Choice(props:{
-    problemData: problemData,
-    setProblemData: Dispatch<SetStateAction<problemData | undefined>>,
-    num:Number
+    allData: ProblemDatas[],
+    problemData: ProblemTypes,
+    setProblemData: Dispatch<SetStateAction<ProblemDatas[]>>,
+    problemNum:number,
+    idx:number
 }) {
-    const [problem, setProblem] = useState<ProblemChoice[]>([
-        {
-            incorrect: false,
-            text: ''
-        }
-    ])
-
-    const addChoice = () => {
-        if (problem.length < 5) {
-            setProblem([...problem, { incorrect: false, text: '' }])
-        }
-    }
-
-    const removeChoice = (index: number) => {
-        if (index > 0) {
-            const newProblem = [...problem]
-            newProblem.splice(index, 1)
-            setProblem(newProblem)
-        }
-    }
+    const [problem, setProblem] = useState<ProblemChoice[]>([])
+    const [input, setInput] = useState(false);
 
     useEffect(()=>{
-        const list = props.problemData;
-        if (list && list.data) {
-            list.data[Number(props.num)- 1] = problem;
+        const list:any = props.problemData.optionText;
+        const problem:ProblemChoice[] = [];
+        list.map((it:any)=>{
+            problem.push({incorrect: false, text: String(it)})
+        })
+        setProblem(problem);
+    },[])
+
+    useEffect(()=>{
+        if(!input) return;
+        console.log(props.allData);
+        const list = props.allData;
+        if (list && problem) {
+            list[props.problemNum - 1][props.idx].optionText = problem;
             props.setProblemData(list);
         }
-    },[problem])
+        setInput(false);
+    },[input])
     
     return (
         <div className={styles.main}>
-            <div className={styles.inforContainer}>
-                <div className={styles.infor}>
-                    정답체크
-                </div>
-            </div>
             {
                 problem.map((it, index) => (
                     <div className={styles.inputBoxContainer} key={index}>
@@ -57,44 +49,15 @@ export default function Choice(props:{
                                 const newProblem = [...problem];
                                 newProblem.forEach((p, i) => (p.incorrect = i === index));
                                 setProblem(newProblem);
+                                setInput(true);
                             }}
                         />
-                        <input
-                            type='text'
-                            className={styles.textBox}
-                            placeholder='보기를 입력하세요'
-                            value={it.text}
-                            onChange={(e) => {
-                                const newProblem = [...problem];
-                                newProblem[index].text = e.target.value;
-                                setProblem(newProblem);
-                            }}
-                        />
-                        {index > 0 && (
-                            <Image
-                                src="/assets/img/x.svg"
-                                alt="user icon"
-                                width={20}
-                                height={20}
-                                className={styles.icon}
-                                onClick={() => removeChoice(index)}
-                            />
-                        )}
+                        <div className={styles.textBox}>
+                            {it.text}
+                        </div>
                     </div>
                 ))
             }
-            {problem.length < 5 && (
-                <div
-                    className={styles.problemAddContainer}
-                >
-                    <button
-                        className={styles.problemAdd}
-                        onClick={addChoice}
-                    >
-                        보기 추가
-                    </button>
-                </div>
-            )}
         </div>
     )
 }

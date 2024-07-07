@@ -10,7 +10,20 @@ import problemData from "@/utils/types/problem";
 import Modal from "./_components/modal/modal";
 
 export default function Home() {
-  const [problemData, setProblemData] = useState<problemData>();
+  const [problemData, setProblemData] = useState<problemData>({
+    setting: {
+      name: '',
+      description: '',
+      image: null,
+      primaryTag: '',
+      tag: []
+    },
+    time: {
+      hh: 0,
+      mm: 0,
+      ss: 0
+    }
+  });
   const [problemPages, setProblemPages] = useState<JSX.Element[]>([]);
   const [modal,setModal] = useState(true);
   const [reload,setReload] = useState(false);
@@ -36,6 +49,7 @@ export default function Home() {
     updatedProblemData.splice(index, 1);
 
     setProblemData({
+      time: problemData.time,
       setting: problemData.setting,
       probelmType: updatedProblemType,
       problemText: updatedProblemText,
@@ -71,9 +85,9 @@ export default function Home() {
   
   return (
   <main>
-    <Modal modal={modal} setModal={setModal} problemData={problemData!} setProblemData={setProblemData}/>
+    <Modal modal={modal} setModal={setModal} problemData={problemData} setProblemData={setProblemData}/>
     <Navbar problemType={problemData?.probelmType ? problemData.probelmType : []} setModal={setModal} problemData={problemData}/>
-    <Sidebar problemType={problemData!} setProblemType={setProblemData} setReload={setReload}/>
+    <Sidebar problemType={problemData} setProblemType={setProblemData} setReload={setReload}/>
     <div className={styles.problemContainer}>
         {problemPages}
         {

@@ -5,7 +5,7 @@ import { Dispatch, MouseEvent, RefObject, SetStateAction, useEffect, useRef, use
 
 export default function Linking(props:{
     problemData: problemData,
-    setProblemData: Dispatch<SetStateAction<problemData | undefined>>,
+    setProblemData: Dispatch<SetStateAction<problemData>>,
     num:Number,
 }){
 

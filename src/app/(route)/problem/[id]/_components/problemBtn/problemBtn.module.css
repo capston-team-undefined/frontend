@@ -1,0 +1,23 @@
+.main{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn{
+    box-sizing: border-box;
+
+    width: 30%;
+    height: 70px;
+
+    background: #0064FF;
+    border: 1px solid #0064FF;
+    border-radius: 30px;
+
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 29px;
+    color: #FFFFFF;
+
+}

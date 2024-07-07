@@ -16,7 +16,6 @@ export default function Navbar(props:{problemType:probelm[], setModal:Dispatch<S
      if(props.problemData)
      console.log(changeProblemTypes(props.problemData));
 
-
     }
     return(
         <div className={styles.main}>

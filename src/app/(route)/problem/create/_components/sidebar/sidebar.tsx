@@ -5,7 +5,7 @@ import problemData, { probelm } from '@/utils/types/problem'
 
 
 
-export default function Sidebar(props: {problemType:problemData,setProblemType:Dispatch<SetStateAction<problemData | undefined>>, setReload:Dispatch<SetStateAction<boolean>>}){
+export default function Sidebar(props: {problemType:problemData,setProblemType:Dispatch<SetStateAction<problemData>>, setReload:Dispatch<SetStateAction<boolean>>}){
 
     const problemAdd = (type:probelm) =>{
         const list = props.problemType;
@@ -13,6 +13,8 @@ export default function Sidebar(props: {problemType:problemData,setProblemType:D
 
         if(!list){
             props.setProblemType({
+                setting: props.problemType.setting,
+                time: props.problemType.time,
                 probelmType: [type],
                 problemText: [''],
                 point: [0],
@@ -96,15 +98,60 @@ export default function Sidebar(props: {problemType:problemData,setProblemType:D
                     </div>
                     <div className={styles.timeInputContainer}>
                         <div>
-                            <input type='text' maxLength={2} placeholder='hh' className={styles.timeInput}/>
+                            <input type='text' maxLength={2} placeholder='hh' className={styles.timeInput} 
+                            onChange={((e)=>{
+                                props.setProblemType({
+                                    setting: props.problemType.setting,
+                                    time: {
+                                        hh: Number(e.target.value),
+                                        mm: props.problemType.time.mm,
+                                        ss: props.problemType.time.ss
+                                    },
+                                    data: props.problemType.data,
+                                    point: props.problemType.point,
+                                    probelmType: props.problemType.probelmType,
+                                    problemText: props.problemType.problemText
+                                })
+                            })}
+                            />
                             시간
                         </div>
                         <div>
-                            <input type='text' maxLength={2} placeholder='mm' className={styles.timeInput}/>
+                            <input type='text' maxLength={2} placeholder='mm' className={styles.timeInput}
+                            onChange={((e)=>{
+                                props.setProblemType({
+                                    setting: props.problemType.setting,
+                                    time: {
+                                        mm: Number(e.target.value),
+                                        hh: props.problemType.time.hh,
+                                        ss: props.problemType.time.ss
+                                    },
+                                    data: props.problemType.data,
+                                    point: props.problemType.point,
+                                    probelmType: props.problemType.probelmType,
+                                    problemText: props.problemType.problemText
+                                })
+                            })}
+                            />
                             분
                         </div>
                         <div>
-                            <input type='text' maxLength={2} placeholder='ss' className={styles.timeInput}/>
+                            <input type='text' maxLength={2} placeholder='ss' className={styles.timeInput}
+                            onChange={((e)=>{
+                                props.setProblemType({
+                                    setting: props.problemType.setting,
+                                    time: {
+                                        ss: Number(e.target.value),
+                                        hh: props.problemType.time.hh,
+                                        mm: props.problemType.time.mm
+                                    },
+                                    data: props.problemType.data,
+                                    point: props.problemType.point,
+                                    probelmType: props.problemType.probelmType,
+                                    problemText: props.problemType.problemText
+                                })
+                            })}
+                            />
                             초
                         </div>
                     </div>

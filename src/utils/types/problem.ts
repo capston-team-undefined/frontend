@@ -35,8 +35,15 @@ export interface ProblemSetting{
     tag: string[],
     image: File | null
 }
+
+export interface ProblemTimes{
+    hh: number,
+    mm: number,
+    ss: number
+}
 export default interface problemData{
     setting: ProblemSetting,
+    time: ProblemTimes,
     probelmType?: probelm[] | null,
     problemText?: string[],
     point?: number[],

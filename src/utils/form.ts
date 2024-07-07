@@ -13,6 +13,7 @@ export const changeProblemTypes = (problemData: problemData) => {
 
     return{
         setting: problemData.setting,
+        time: problemData.time,
         data
     }
 }

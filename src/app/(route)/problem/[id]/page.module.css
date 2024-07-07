@@ -5,3 +5,11 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+
+.btnContainer{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

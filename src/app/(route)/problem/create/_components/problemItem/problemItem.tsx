@@ -16,7 +16,7 @@ export default function ProblemItem(props:{
     idx:number,
     it:probelm,
     problemData: problemData,
-    setProblemData: Dispatch<SetStateAction<problemData | undefined>>
+    setProblemData: Dispatch<SetStateAction<problemData>>
 }
 ){
 
@@ -40,10 +40,10 @@ export default function ProblemItem(props:{
             <div className={styles.cancel}>
             {props.num}문항
             <Image
-            src="/assets/img/x.svg" 
+            src="/assets/img/x.svg"
             alt="user icon"
-            width={15}  
-            height={15}  
+            width={15}
+            height={15}
             className={styles.icon}
             onClick={()=>{props.handleDelete(props.idx)}}
             />

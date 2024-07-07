@@ -1,19 +1,19 @@
 import problemData, { probelm } from '@/utils/types/problem'
 import styles from './problemPage.module.css'
 import ProblemItem from '../problemItem/problemItem';
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useEffect } from 'react';
+import { ProblemDatas } from '@/utils/types/problemChk';
 
 
 export default function ProblemPage(props: {
-    problemType: probelm[];
-    problemNum: number;
-    onDelete: Function
-    problemData: problemData,
-    setProblemData: Dispatch<SetStateAction<problemData | undefined>>
+    allData: ProblemDatas[],
+    problemNum: number,
+    problemData: ProblemDatas,
+    setProblemData: Dispatch<SetStateAction<ProblemDatas[]>>
   }) {
-    const handleDelete = (index: number) => {
-      props.onDelete(index);
-    };
+    useEffect(()=>{
+      console.log(props.problemData)
+    },[])
   
     return (
       <div className={styles.main}>
@@ -22,18 +22,18 @@ export default function ProblemPage(props: {
         </div>
         <div className={styles.itemList}
         style={{
-          alignContent: `${props.problemType.length <= 2 ? "flex-start" : "space-around"}`
+          alignContent: `${props.problemData.length <= 2 ? "flex-start" : "space-around"}`
         }}
         >
-          {props.problemType.map((it, idx) => {
+          {props.problemData.map((it, idx) => {
             return (
                 <ProblemItem
                 key={idx}
+                allData={props.allData}
                 num={(props.problemNum - 1) * 3 + (idx + 1)}
-                handleDelete={handleDelete}
+                problemNum={props.problemNum}
                 idx={idx}
                 it={it}
-                problemData={props.problemData}
                 setProblemData={props.setProblemData}
                 />
             );

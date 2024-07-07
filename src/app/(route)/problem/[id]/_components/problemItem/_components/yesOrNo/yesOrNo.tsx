@@ -3,11 +3,14 @@ import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import styles from './yesOrNo.module.css'
 import problemData, { ProblemYseOrNo } from '@/utils/types/problem'
 import Image from 'next/image'
+import { ProblemDatas, ProblemTypes } from '@/utils/types/problemChk'
 
 export default function YesOrNo(props:{
-    problemData: problemData,
-    setProblemData: Dispatch<SetStateAction<problemData | undefined>>,
-    num:Number
+    allData: ProblemDatas[],
+    problemData: ProblemTypes,
+    setProblemData: Dispatch<SetStateAction<ProblemDatas[]>>,
+    problemNum:number,
+    idx:number
 }) {
     const [problem, setProblem] = useState<ProblemYseOrNo>(
         {
@@ -18,9 +21,9 @@ export default function YesOrNo(props:{
 
 
     useEffect(()=>{
-        const list = props.problemData;
-        if (list && list.data) {
-            list.data[Number(props.num)- 1] = problem;
+        const list = props.allData;
+        if (list && problem) {
+            list[props.problemNum - 1][props.idx].optionText = problem;
             props.setProblemData(list);
         }
     },[problem])
@@ -45,11 +48,6 @@ export default function YesOrNo(props:{
     }
     return (
         <div className={styles.main}>
-            <div className={styles.inforContainer}>
-                <div className={styles.infor}>
-                    정답클릭
-                </div>
-            </div>
             <div className={styles.yesOrNoContainer}>
             <div className={`${styles.yesContainer} ${problem.yes ? styles.yesOn : ''}`}
                 onClick={()=>{handleOnClickYseOrNo('yes')}}
